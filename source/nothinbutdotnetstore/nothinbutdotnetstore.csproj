@@ -82,15 +82,20 @@
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestInformation .cs" />
+    <Compile Include="web\core\ICreateReportModel.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
     <Compile Include="web\core\IFindCommands.cs" />
+    <Compile Include="web\core\IFindViews.cs" />
     <Compile Include="web\core\IProcessAnApplicationSpecificBehaviour .cs" />
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
+    <Compile Include="web\core\IReportModel.cs" />
+    <Compile Include="web\core\IView.cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
     <Compile Include="web\core\RawHandler.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
+    <Compile Include="web\core\ViewMainDepartmentsInTheStore.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
