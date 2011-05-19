@@ -78,6 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="infrastructure\container\IFetchDependencies.cs" />
+    <Compile Include="infrastructure\IMapADiscretePair.cs" />
+    <Compile Include="infrastructure\IMapFromOneTypeToAnother.cs" />
+    <Compile Include="infrastructure\MappingGateway.cs" />
+    <Compile Include="infrastructure\Payload.cs" />
     <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
@@ -106,7 +111,9 @@
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
+    <Compile Include="web\core\PayloadFactory.cs" />
     <Compile Include="web\core\RawHandler.cs" />
+    <Compile Include="web\core\Request.cs" />
     <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
