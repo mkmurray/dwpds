@@ -7,8 +7,8 @@ using nothinbutdotnetstore.web.core;
 
 namespace nothinbutdotnetstore.specs
 {
-  [Subject(typeof(ViewTheDepartmentsInADepartment))]  
-  public class ViewProductInADepartmentSpecs
+  [Subject(typeof(ViewTheDepartmentsInADepartment))]
+  public class ViewProductsInADepartmentSpecs
   {
     public abstract class concern : Observes<IProcessAnApplicationSpecificBehaviour,
                                       ViewProductsInADepartment>
@@ -27,17 +27,15 @@ namespace nothinbutdotnetstore.specs
 
         request.setup(x => x.map<DepartmentItem>()).Return(parent_department);
 
-          store_catalog.setup(x => x.get_products_for(parent_department)).Return(products);
+        store_catalog.setup(x => x.get_products_for(parent_department)).Return(products);
       };
 
       Because b = () =>
         sut.run(request);
 
-      It should_get_the_list_of_departments_for_a_given_department = () =>
-      {
-      };
+      It should_get_the_list_of_products_for_a_given_department = () => { };
 
-      It should_tell_the_display_engine_to_display_the_departments = () =>
+      It should_tell_the_display_engine_to_display_the_products = () =>
         display_engine.received(x => x.display(products));
 
       static IContainRequestInformation request;
