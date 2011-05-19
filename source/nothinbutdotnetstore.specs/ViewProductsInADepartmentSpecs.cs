@@ -21,6 +21,7 @@ namespace nothinbutdotnetstore.specs
       {
         store_catalog = depends.on<ICanFindDetailsInTheStore>();
         display_engine = depends.on<ICanRenderInformation>();
+        products = new List<ProductItem> {new ProductItem()};
 
         parent_department = fake.an<DepartmentItem>();
         request = fake.an<IContainRequestInformation>();
