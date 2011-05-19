@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,6 +14,11 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing.stubs
     public IEnumerable<DepartmentItem> get_departments_for(DepartmentItem department)
     {
       return Enumerable.Range(1, 100).Select(x => new DepartmentItem {name = x.ToString("Sub Department 0")});
+    }
+
+    public IEnumerable<ProductItem> get_products_for_department(DepartmentItem department)
+    {
+      return Enumerable.Range(1, 100).Select(x => new ProductItem());
     }
   }
 }

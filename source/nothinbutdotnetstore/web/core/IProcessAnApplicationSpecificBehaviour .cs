@@ -1,6 +1,6 @@
 namespace nothinbutdotnetstore.web.core
 {
-  public interface IProcessAnApplicationSpecificBehaviour 
+  public interface IProcessAnApplicationSpecificBehaviour
   {
     void run(IContainRequestInformation request);
   }
