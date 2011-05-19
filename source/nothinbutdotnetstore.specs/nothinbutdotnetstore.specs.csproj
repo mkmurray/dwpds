@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="CommandUrlSpecs.cs" />
     <Compile Include="MappingGatewaySpecs.cs" />
     <Compile Include="RequestFactorySpecs.cs" />
     <Compile Include="RequestSpecs.cs" />
