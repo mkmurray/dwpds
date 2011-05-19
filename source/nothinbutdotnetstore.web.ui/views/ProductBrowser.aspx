@@ -2,6 +2,7 @@
 <%@ Page Language="c#" AutoEventWireup="true" 
 Inherits="nothinbutdotnetstore.web.ui.views.ProductBrowser"
 CodeFile="ProductBrowser.aspx.cs" MasterPageFile="Store.master" %>
+<%@ Import Namespace="nothinbutdotnetstore.web.core.aspnet" %>
 
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
     <form></form>
@@ -21,7 +22,7 @@ CodeFile="ProductBrowser.aspx.cs" MasterPageFile="Store.master" %>
                    {%>
         <tr class="nonShadedRow">                    
             <td class="ListItem">                    
-              <a href='#'><%= product.name %></a>
+              <a href='href="<%= RouteGateway.GetRoute(product)%>'><%= product.name %></a>
             </td>
             <td>Product Description</td>
             <td><input type="text" class="normalTextBox" value="1" /></td>

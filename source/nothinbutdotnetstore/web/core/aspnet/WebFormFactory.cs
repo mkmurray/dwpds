@@ -12,7 +12,7 @@ namespace nothinbutdotnetstore.web.core.aspnet
     IFindAspxPagesForReportModels page_registry;
 
     public WebFormFactory():this(BuildManager.CreateInstanceFromVirtualPath,
-      Stub.with<StubPathRegistry>())
+      new PathRegistry())
     {
     }
 

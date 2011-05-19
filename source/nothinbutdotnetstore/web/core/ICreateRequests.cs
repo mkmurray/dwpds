@@ -4,6 +4,6 @@ namespace nothinbutdotnetstore.web.core
 {
   public interface ICreateRequests
   {
-    IContainRequestInformation create_request_from(HttpContext context);
+    IContainRequestInformation create_request_from(CurrentContextResolver context);
   }
 }

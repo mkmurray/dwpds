@@ -25,8 +25,9 @@ namespace nothinbutdotnetstore.specs
 
         request = fake.an<IContainRequestInformation>();
         the_current_context = ObjectFactory.web.create_http_context();
+        context_resolver = () => the_current_context;
 
-        request_factory.setup(x => x.create_request_from(the_current_context)).Return(request);
+        request_factory.setup(x => x.create_request_from(context_resolver)).Return(request);
       };
 
       Because b = () =>
@@ -41,6 +42,7 @@ namespace nothinbutdotnetstore.specs
       static IContainRequestInformation request;
       static HttpContext the_current_context;
       static ICreateRequests request_factory;
+      static CurrentContextResolver context_resolver;
     }
   }
 }

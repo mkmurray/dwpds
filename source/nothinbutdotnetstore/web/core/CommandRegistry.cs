@@ -10,7 +10,7 @@ namespace nothinbutdotnetstore.web.core
     IEnumerable<IProcessRequestInformation> process_request_commands;
     MissingCommandFactory missing_command_factory;
 
-    public CommandRegistry():this(Stub.with<StubSetOfCommands>(),
+    public CommandRegistry():this(HardCodedGateway.CommandList(),
       Stub.with<StubMissingRequest>().create)
     {
     }

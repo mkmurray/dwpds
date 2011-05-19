@@ -13,9 +13,9 @@ namespace nothinbutdotnetstore.specs.utility
         return new HttpContext(create_request(), create_response());
       }
 
-      static HttpRequest create_request()
+      public static HttpRequest create_request()
       {
-        return new HttpRequest("blah.asxp", "http://localhost/blah.aspx", String.Empty);
+        return new HttpRequest("blah.aspx", "http://localhost/folder/blah.aspx", "querystring=true");
       }
 
       static HttpResponse create_response()

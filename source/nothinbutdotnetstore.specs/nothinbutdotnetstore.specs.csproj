@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="PathRegistrySpecs.cs" />
+    <Compile Include="RequestFactorySpecs.cs" />
     <Compile Include="ViewProductsInADepartmentSpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />

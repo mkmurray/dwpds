@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="infrastructure\HardCodedGateway.cs" />
     <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="web\core\aspnet\IFindAspxPagesForReportModels.cs" />
     <Compile Include="web\core\aspnet\IReportModelBoundAspx .cs" />
     <Compile Include="web\core\aspnet\PageFactory.cs" />
+    <Compile Include="web\core\aspnet\Route.cs" />
     <Compile Include="web\core\aspnet\SimpleView.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -98,6 +100,7 @@
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\CurrentContextResolver.cs" />
     <Compile Include="web\core\FrontController.cs" />
+    <Compile Include="web\core\FrontControllerRequest.cs" />
     <Compile Include="web\core\ICanRenderInformation.cs" />
     <Compile Include="web\core\IContainRequestInformation .cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
@@ -106,14 +109,14 @@
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
+    <Compile Include="web\core\PathRegistry.cs" />
     <Compile Include="web\core\RawHandler.cs" />
-    <Compile Include="web\core\stubs\StubPathRegistry.cs" />
+    <Compile Include="web\core\RequestFactory.cs" />
+    <Compile Include="web\core\SetOfCommands.cs" />
     <Compile Include="web\core\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\stubs\StubMissingRequest.cs" />
-    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,7 @@ namespace nothinbutdotnetstore.web.core
     ICreateRequests request_factory;
 
     public RawHandler():this(new FrontController(),
-      Stub.with<StubRequestFactory>())
+      new RequestFactory())
     {
     }
 
@@ -22,7 +22,7 @@ namespace nothinbutdotnetstore.web.core
 
     public void ProcessRequest(HttpContext context)
     {
-      front_controller.process(request_factory.create_request_from(context));
+      front_controller.process(request_factory.create_request_from(() => context));
     }
 
     public bool IsReusable
