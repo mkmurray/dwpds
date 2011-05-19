@@ -1,9 +1,11 @@
 using System;
-using Machine.Specifications;
 using developwithpassion.specifications.rhinomocks;
-using developwithpassion.specifications.extensions;
+using Machine.Specifications;
 using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.web.application.catalogbrowsing;
+using nothinbutdotnetstore.web.core;
+using nothinbutdotnetstore.web.core.urls;
+using developwithpassion.specifications.extensions;
 
 namespace nothinbutdotnetstore.specs
 {
@@ -11,32 +13,42 @@ namespace nothinbutdotnetstore.specs
   {
     public abstract class concern : Observes
     {
-
     }
 
-    [Subject(typeof (CommandUrlSpecs))]
-    public class when_asking_for_the_command_from_an_IProvideAUrlToRunACommand: concern
+    [Subject(typeof(CommandUrlSpecs))]
+    public class when_building_a_url_to_target_a_behaviour : concern
     {
       Establish c = () =>
       {
-        expected_url = "/the/url/to/reach";
+        UrlBuilderFactory factory = () => the_url_builder;
+
+        the_url_builder = fake.an<IBuildUrls>();
+        url_adorner = fake.an<IAddExtraInformationForABehaviourTarget>();
+
+        spec.change(() => CommandUrl.builder_factory).to(factory);
+
+        the_url_builder.setup(x => x.target<OurCommand>()).Return(url_adorner);
       };
 
       Because b = () =>
-        url = CommandUrl.to_run<OurCommand>();
+        result = CommandUrl.to_run<OurCommand>();
 
-      It the_url_is_determined_by_the_command = () =>
-        url.ShouldEqual(expected_url);
 
-      static string url;
+      It should_return_the_url_adorner = () =>
+        result.ShouldEqual(url_adorner);
+
+
+      static IAddExtraInformationForABehaviourTarget result;
       static string expected_url;
+      static IBuildUrls the_url_builder;
+      static IAddExtraInformationForABehaviourTarget url_adorner;
     }
 
-    public class OurCommand : IProvideAUrlToRunACommand
+    public class OurCommand : IProcessAnApplicationSpecificBehaviour
     {
-      public string get_url()
+      public void run(IContainRequestInformation request)
       {
-        return "/the/url/to/reach";
+        throw new NotImplementedException();
       }
     }
   }

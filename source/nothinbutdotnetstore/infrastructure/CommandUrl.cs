@@ -1,13 +1,19 @@
 using System;
-using nothinbutdotnetstore.web.application.catalogbrowsing;
+using nothinbutdotnetstore.web.core;
+using nothinbutdotnetstore.web.core.urls;
 
 namespace nothinbutdotnetstore.infrastructure
 {
   public static class CommandUrl
   {
-    public static string to_run<T>() where T : IProvideAUrlToRunACommand, new()
+    public static UrlBuilderFactory builder_factory = () =>
     {
-      return new T().get_url();
+      throw new NotImplementedException("This needs to be configured by the startup pipeline");
+    };
+
+    public static IAddExtraInformationForABehaviourTarget to_run<Behaviour>() where Behaviour : IProcessAnApplicationSpecificBehaviour
+    {
+      return builder_factory().target<Behaviour>();
     }
   }
 }

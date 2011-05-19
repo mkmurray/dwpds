@@ -84,8 +84,10 @@
     <Compile Include="infrastructure\container\IFetchDependencies.cs" />
     <Compile Include="infrastructure\IMapADiscretePair.cs" />
     <Compile Include="infrastructure\IMapFromOneTypeToAnother.cs" />
+    <Compile Include="infrastructure\IStoreTokens.cs" />
     <Compile Include="infrastructure\MappingGateway.cs" />
     <Compile Include="infrastructure\Payload.cs" />
+    <Compile Include="infrastructure\PropertyAccessor.cs" />
     <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalogbrowsing\IProvideAUrlToRunACommand.cs" />
@@ -119,6 +121,13 @@
     <Compile Include="web\core\RawHandler.cs" />
     <Compile Include="web\core\Request.cs" />
     <Compile Include="web\core\stubs\StubPathRegistry.cs" />
+    <Compile Include="web\core\urls\IAddExtraInformationForABehaviourTarget.cs" />
+    <Compile Include="web\core\urls\IBuildUrls.cs" />
+    <Compile Include="web\core\urls\ICreateItemDetailSpecifiers.cs" />
+    <Compile Include="web\core\urls\ISpecifiyItemDetails.cs" />
+    <Compile Include="web\core\urls\PayloadDetailConfiguration.cs" />
+    <Compile Include="web\core\urls\UrlBuilder.cs" />
+    <Compile Include="web\core\urls\UrlBuilderFactory.cs" />
     <Compile Include="web\core\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />

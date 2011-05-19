@@ -3,6 +3,7 @@
 Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser"
 CodeFile="DepartmentBrowser.aspx.cs"
  MasterPageFile="Store.master" %>
+<%@ Import Namespace="nothinbutdotnetstore.infrastructure" %>
 <%@ Import Namespace="nothinbutdotnetstore.web.application.catalogbrowsing" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
     <p class="ListHead">Select An Department</p>
@@ -11,7 +12,12 @@ CodeFile="DepartmentBrowser.aspx.cs"
               <% foreach (var department in this.model)
                  {%>
               <tr class="ListItem">
-               <td><a href="#"><%= department.name %></a></td>
+               <td><a href="<%= CommandUrl.to_run<ViewTheDepartmentsInADepartment>()
+                                  .include(department,d =>
+                                  {
+                                    d.item(x => x.id);
+                                  }) 
+                %>"><%= department.name %></a></td>
            	  </tr>        
               <%
                  }%>
