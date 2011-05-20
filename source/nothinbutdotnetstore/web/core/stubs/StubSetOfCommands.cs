@@ -8,8 +8,9 @@ namespace nothinbutdotnetstore.web.core.stubs
   {
     public IEnumerator<IProcessRequestInformation> GetEnumerator()
     {
-      yield return new RequestCommand(x => true,
-                                      new ViewProductsInADepartment());
+      yield return new RequestCommand(IncomingRequest.is_for<ViewProductsInADepartment>(), new ViewProductsInADepartment());
+      yield return new RequestCommand(IncomingRequest.is_for<ViewMainDepartmentsInTheStore>(), new ViewMainDepartmentsInTheStore());
+    yield return new RequestCommand(IncomingRequest.is_for<ViewProductsInADepartment>(), new ViewTheDepartmentsInADepartment());
     }
 
     IEnumerator IEnumerable.GetEnumerator()
