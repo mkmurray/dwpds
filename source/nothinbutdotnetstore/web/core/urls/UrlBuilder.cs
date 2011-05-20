@@ -1,3 +1,4 @@
+using System.Linq;
 using nothinbutdotnetstore.infrastructure;
 
 namespace nothinbutdotnetstore.web.core.urls
@@ -6,11 +7,14 @@ namespace nothinbutdotnetstore.web.core.urls
   {
     public static readonly string command_key = "command";
     ICreateItemDetailSpecifiers item_detail_factory;
+    ITransformStoreTokensToANiceUrl url_formatting_visitor;
     IStoreTokens token_store;
 
-    public UrlBuilder(IStoreTokens token_store, ICreateItemDetailSpecifiers item_detail_factory)
+    public UrlBuilder(IStoreTokens token_store, ICreateItemDetailSpecifiers item_detail_factory,
+                      ITransformStoreTokensToANiceUrl url_formatting_visitor)
     {
       this.token_store = token_store;
+      this.url_formatting_visitor = url_formatting_visitor;
       this.item_detail_factory = item_detail_factory;
     }
 
@@ -24,13 +28,19 @@ namespace nothinbutdotnetstore.web.core.urls
 
     UrlBuilder new_instance()
     {
-      return new UrlBuilder(token_store, item_detail_factory);
+      return new UrlBuilder(token_store, item_detail_factory, url_formatting_visitor);
     }
 
     public IAddExtraInformationForABehaviourTarget target<T>()
     {
       token_store.store_token(command_key, typeof(T));
       return new_instance();
+    }
+
+    public override string ToString()
+    {
+      token_store.ToList().ForEach(url_formatting_visitor.visit);
+      return url_formatting_visitor.get_result();
     }
   }
 }

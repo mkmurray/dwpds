@@ -22,10 +22,10 @@ namespace nothinbutdotnetstore.specs
         container = depends.on<IFetchDependencies>();
 
         the_mapped_item = new AnotherMappedItem();
-        discrete_mapper = new FakeMapper(the_mapped_item,number);
+        discrete_mapper = depends.on<IMapADiscretePair<int, AnotherMappedItem>>();
         container.setup(x => x.an<IMapADiscretePair<int, AnotherMappedItem>>()).Return(discrete_mapper);
 
-        depends.on<IMapADiscretePair<int,AnotherMappedItem>>(discrete_mapper);
+        discrete_mapper.setup(x => x.map(number)).Return(the_mapped_item);
       };
 
       Because b = () =>
@@ -37,29 +37,11 @@ namespace nothinbutdotnetstore.specs
       static AnotherMappedItem result;
       static AnotherMappedItem the_mapped_item;
       static IFetchDependencies container;
-      static FakeMapper discrete_mapper;
+      static IMapADiscretePair<int,AnotherMappedItem> discrete_mapper;
       static int number = 2;
     }
 
-    class FakeMapper : IMapADiscretePair<int, AnotherMappedItem>
-    {
-      AnotherMappedItem result;
-      int argument;
-
-      public FakeMapper(AnotherMappedItem result,int argument)
-      {
-        this.result = result;
-        this.argument = argument;
-      }
-
-      public AnotherMappedItem map(int input)
-      {
-        input.ShouldEqual(argument);
-        return result;
-      }
-    }
-
-    class AnotherMappedItem
+    public class AnotherMappedItem
     {
     }
   }
