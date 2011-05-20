@@ -114,6 +114,7 @@
     <Compile Include="MappingGatewaySpecs.cs" />
     <Compile Include="RequestFactorySpecs.cs" />
     <Compile Include="RequestSpecs.cs" />
+    <Compile Include="spikes\MessingWithExpressions.cs" />
     <Compile Include="UrlBuilderSpecs.cs" />
     <Compile Include="ViewProductsInADepartmentSpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />

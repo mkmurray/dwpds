@@ -116,6 +116,7 @@
     <Compile Include="web\core\IProcessAnApplicationSpecificBehaviour .cs" />
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
+    <Compile Include="web\core\urls\IMapAnPropertyExpressionToAMeaningfulUrlTokenKey.cs" />
     <Compile Include="web\core\urls\ItemDetailSpecifier.cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
     <Compile Include="web\core\PayloadFactory.cs" />
