@@ -17,15 +17,8 @@ namespace nothinbutdotnetstore.web.core.urls
         url_builder.AppendFormat("{0}.denver", ((Type)item.Value).Name);
         return;
       }
-      if (number_of_items_visited == 2)
-      {
-        url_builder.AppendFormat("?{0}={1}", item.Key, item.Value.ToString());
-      }
-      else
-      {
-        url_builder.AppendFormat("&{0}={1}", item.Key, item.Value.ToString());
-      }
-
+      var tokenSeparator = (number_of_items_visited == 2) ? "?" : "&";
+      url_builder. AppendFormat("{0}{1}={2}", tokenSeparator, item.Key, item.Value);
     }
 
     public string get_result()
