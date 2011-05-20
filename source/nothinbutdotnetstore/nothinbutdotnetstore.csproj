@@ -127,6 +127,7 @@
     <Compile Include="web\core\urls\IBuildUrls.cs" />
     <Compile Include="web\core\urls\ICreateItemDetailSpecifiers.cs" />
     <Compile Include="web\core\urls\ISpecifyItemDetails.cs" />
+    <Compile Include="web\core\urls\MapPropertyAccessorExpressionToModelDotMember.cs" />
     <Compile Include="web\core\urls\PayloadDetailConfiguration.cs" />
     <Compile Include="web\core\urls\UrlBuilder.cs" />
     <Compile Include="web\core\urls\UrlBuilderFactory.cs" />
