@@ -138,6 +138,7 @@
     <Compile Include="web\core\urls\PayloadDetailConfiguration.cs" />
     <Compile Include="web\core\urls\UrlBuilder.cs" />
     <Compile Include="web\core\urls\UrlBuilderFactory.cs" />
+    <Compile Include="web\core\urls\UrlTransformingVisitor.cs" />
     <Compile Include="web\core\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
