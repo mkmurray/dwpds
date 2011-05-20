@@ -1,10 +1,9 @@
 using System.Collections.Generic;
+using nothinbutdotnetstore.infrastructure;
 
 namespace nothinbutdotnetstore.web.core.urls
 {
-  public interface ITransformStoreTokensToANiceUrl
+  public interface ITransformStoreTokensToANiceUrl :IProcessAndGenerate<KeyValuePair<string,object>,string >
   {
-    string get_result();
-    void visit(KeyValuePair<string, object> key_value_pair);
   }
 }

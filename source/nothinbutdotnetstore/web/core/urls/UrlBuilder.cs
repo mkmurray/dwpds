@@ -39,8 +39,7 @@ namespace nothinbutdotnetstore.web.core.urls
 
     public override string ToString()
     {
-      token_store.ToList().ForEach(url_formatting_visitor.visit);
-      return url_formatting_visitor.get_result();
+      return token_store.get_result_of_visiting_all_items_with(url_formatting_visitor);
     }
   }
 }

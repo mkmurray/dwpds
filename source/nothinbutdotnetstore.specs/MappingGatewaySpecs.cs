@@ -1,4 +1,3 @@
-using System;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
@@ -37,7 +36,7 @@ namespace nothinbutdotnetstore.specs
       static AnotherMappedItem result;
       static AnotherMappedItem the_mapped_item;
       static IFetchDependencies container;
-      static IMapADiscretePair<int,AnotherMappedItem> discrete_mapper;
+      static IMapADiscretePair<int, AnotherMappedItem> discrete_mapper;
       static int number = 2;
     }
 

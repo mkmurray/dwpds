@@ -79,17 +79,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
     <Compile Include="infrastructure\CommandUrl.cs" />
     <Compile Include="infrastructure\container\IFetchDependencies.cs" />
+    <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\IMapADiscretePair.cs" />
     <Compile Include="infrastructure\IMapFromOneTypeToAnother.cs" />
+    <Compile Include="infrastructure\IProcessAndGenerate.cs" />
     <Compile Include="infrastructure\IStoreTokens.cs" />
     <Compile Include="infrastructure\MappingGateway.cs" />
     <Compile Include="infrastructure\Payload.cs" />
     <Compile Include="infrastructure\PropertyAccessor.cs" />
     <Compile Include="infrastructure\Stub.cs" />
-    <Compile Include="MessageGenerator.cs" />
+    <Compile Include="infrastructure\IProcessElementsOf.cs" />
     <Compile Include="web\application\catalogbrowsing\IProvideAUrlToRunACommand.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
     <Compile Include="web\application\catalogbrowsing\DepartmentItem.cs" />

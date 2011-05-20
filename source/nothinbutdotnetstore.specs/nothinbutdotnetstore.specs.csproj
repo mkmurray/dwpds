@@ -108,8 +108,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CommandUrlSpecs.cs" />
+    <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="ItemDetailSpecifierSpecs.cs" />
     <Compile Include="MappingGatewaySpecs.cs" />
     <Compile Include="MapPropertyAccessorExpressionToModelDotMemberSpecs.cs" />
@@ -121,7 +121,6 @@
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
-    <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="RawHandlerSpecs.cs" />
     <Compile Include="RequestCommandSpecs.cs" />
     <Compile Include="StubGatewaySpecs.cs" />
