@@ -6,26 +6,31 @@ namespace nothinbutdotnetstore.web.core.urls
 {
   public class UrlTransformingVisitor : ITransformStoreTokensToANiceUrl
   {
-    private int itemsVisited = 0;
-    private string command_name = string.Empty;
-    private StringBuilder queryString = new StringBuilder();
+    public StringBuilder url_builder = new StringBuilder();
+    int number_of_items_visited;
 
     public void visit(KeyValuePair<string, object> item)
     {
-      itemsVisited++;
-      if (itemsVisited == 1)
+      number_of_items_visited++;
+      if (number_of_items_visited ==1)
       {
-        command_name = ((Type) item.Value).Name;
+        url_builder.AppendFormat("{0}.denver", ((Type)item.Value).Name);
+        return;
+      }
+      if (number_of_items_visited == 2)
+      {
+        url_builder.AppendFormat("?{0}={1}", item.Key, item.Value.ToString());
       }
       else
       {
-        queryString.Append(string.Format("{0}={1}", item.Key, item.Value.ToString()));
+        url_builder.AppendFormat("&{0}={1}", item.Key, item.Value.ToString());
       }
+
     }
 
     public string get_result()
     {
-      return string.Format("{0}.denver?{1}", command_name, queryString.ToString());
+      throw new NotImplementedException();
     }
   }
 }
