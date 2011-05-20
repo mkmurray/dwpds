@@ -42,6 +42,7 @@ namespace nothinbutdotnetstore.specs
         var request = result.ShouldBeAn<Request>();
         request.mapping_gateway.ShouldEqual(the_mapping_gateway);
         request.payload.ShouldEqual(the_created_payload);
+        request.raw_url.ShouldEqual(context.Request.RawUrl);
       };
 
       static IContainRequestInformation result;

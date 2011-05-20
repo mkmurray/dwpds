@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="CommandUrlSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
+    <Compile Include="RequestSpecificationFactorySpecs.cs" />
     <Compile Include="WebSpecs.cs" />
     <Compile Include="ItemDetailSpecifierSpecs.cs" />
     <Compile Include="MappingGatewaySpecs.cs" />

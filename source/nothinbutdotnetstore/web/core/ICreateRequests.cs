@@ -27,7 +27,7 @@ namespace nothinbutdotnetstore.web.core
 
     public IContainRequestInformation create_request_from(HttpContext context)
     {
-      return new Request(mapping_gateway, payload_factory(context));
+      return new Request(mapping_gateway, payload_factory(context)){raw_url = context.Request.RawUrl};
     }
   }
 }

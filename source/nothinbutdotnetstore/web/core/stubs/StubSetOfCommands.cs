@@ -9,9 +9,16 @@ namespace nothinbutdotnetstore.web.core.stubs
   {
     public IEnumerator<IProcessRequestInformation> GetEnumerator()
     {
-      yield return new RequestCommand(Web.IncomingRequest.is_for<ViewProductsInADepartment>(), new ViewProductsInADepartment());
-      yield return new RequestCommand(Web.IncomingRequest.is_for<ViewMainDepartmentsInTheStore>(), new ViewMainDepartmentsInTheStore());
-    yield return new RequestCommand(Web.IncomingRequest.is_for<ViewProductsInADepartment>(), new ViewTheDepartmentsInADepartment());
+      yield return register_command<ViewMainDepartmentsInTheStore>();
+      yield return register_command<ViewProductsInADepartment>();
+      yield return register_command<ViewTheDepartmentsInADepartment>();
+    }
+
+    IProcessRequestInformation register_command<Command>() where Command
+                                                             : IProcessAnApplicationSpecificBehaviour
+    {
+      return new RequestCommand(Web.IncomingRequest.is_for<Command>(),
+                                null);
     }
 
     IEnumerator IEnumerable.GetEnumerator()
