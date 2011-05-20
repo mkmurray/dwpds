@@ -3,7 +3,7 @@ using nothinbutdotnetstore.infrastructure;
 
 namespace nothinbutdotnetstore.web.core.urls
 {
-  public interface ISpecifiyItemDetails<InputModel>
+  public interface ISpecifyItemDetails<InputModel>
   {
     void item<PropertyType>(Expression<PropertyAccessor<InputModel, PropertyType>> accessor);
   }

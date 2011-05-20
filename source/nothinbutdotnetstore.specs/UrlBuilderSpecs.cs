@@ -57,7 +57,7 @@ namespace nothinbutdotnetstore.specs
       Establish c = () =>
       {
         i_create_item_details = depends.on<ICreateItemDetailSpecifiers>();
-        the_item_detail = fake.an<ISpecifiyItemDetails<OurItemModel>>();
+        the_item_detail = fake.an<ISpecifyItemDetails<OurItemModel>>();
 
         configuration = x =>
         {
@@ -84,7 +84,7 @@ namespace nothinbutdotnetstore.specs
       static bool configured_item;
       static PayloadDetailConfiguration<OurItemModel> configuration;
       static OurItemModel the_model;
-      static ISpecifiyItemDetails<OurItemModel> the_item_detail;
+      static ISpecifyItemDetails<OurItemModel> the_item_detail;
       static ICreateItemDetailSpecifiers i_create_item_details;
     }
 

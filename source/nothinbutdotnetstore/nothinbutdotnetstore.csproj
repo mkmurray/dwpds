@@ -116,6 +116,7 @@
     <Compile Include="web\core\IProcessAnApplicationSpecificBehaviour .cs" />
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
+    <Compile Include="web\core\urls\ItemDetailSpecifier.cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
     <Compile Include="web\core\PayloadFactory.cs" />
     <Compile Include="web\core\RawHandler.cs" />
@@ -124,7 +125,7 @@
     <Compile Include="web\core\urls\IAddExtraInformationForABehaviourTarget.cs" />
     <Compile Include="web\core\urls\IBuildUrls.cs" />
     <Compile Include="web\core\urls\ICreateItemDetailSpecifiers.cs" />
-    <Compile Include="web\core\urls\ISpecifiyItemDetails.cs" />
+    <Compile Include="web\core\urls\ISpecifyItemDetails.cs" />
     <Compile Include="web\core\urls\PayloadDetailConfiguration.cs" />
     <Compile Include="web\core\urls\UrlBuilder.cs" />
     <Compile Include="web\core\urls\UrlBuilderFactory.cs" />
