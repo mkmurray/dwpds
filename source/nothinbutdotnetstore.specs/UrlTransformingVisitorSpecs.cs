@@ -94,6 +94,25 @@ namespace nothinbutdotnetstore.specs
       static KeyValuePair<string, object> second_pair;
       static IEnumerable<KeyValuePair<string, object>> remaining;
     }
+    public class when_getting_the_result   : concern
+    {
+      Establish c = () =>
+      {
+        builder.Append("blasdfsadfsfd");
+      };
+
+      Because b = () =>
+        result = sut.get_result();
+
+      It should_return_the_result_of_the_builder = () =>
+        result.ShouldEqual(builder.ToString());
+
+
+      static string result;
+      static KeyValuePair<string, object> first_pair;
+      static KeyValuePair<string, object> second_pair;
+      static IEnumerable<KeyValuePair<string, object>> remaining;
+    }
 
     public class AnApplicationBehaviour
     {
