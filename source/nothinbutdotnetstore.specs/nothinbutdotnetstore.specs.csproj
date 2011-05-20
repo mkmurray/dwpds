@@ -110,7 +110,7 @@
   <ItemGroup>
     <Compile Include="CommandUrlSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
-    <Compile Include="IncomingRequestSpecs.cs" />
+    <Compile Include="WebSpecs.cs" />
     <Compile Include="ItemDetailSpecifierSpecs.cs" />
     <Compile Include="MappingGatewaySpecs.cs" />
     <Compile Include="MapPropertyAccessorExpressionToModelDotMemberSpecs.cs" />

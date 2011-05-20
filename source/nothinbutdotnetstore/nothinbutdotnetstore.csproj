@@ -123,6 +123,9 @@
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
     <Compile Include="web\core\MissingApplicationBehaviour.cs" />
+    <Compile Include="web\core\routing\ICreateRequestSpecifications .cs" />
+    <Compile Include="web\core\routing\RequestCriteriaBuilderFactory.cs" />
+    <Compile Include="web\core\routing\Web.cs" />
     <Compile Include="web\core\urls\IMapAnPropertyExpressionToAMeaningfulUrlTokenKey.cs" />
     <Compile Include="web\core\urls\ItemDetailSpecifier.cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
