@@ -37,7 +37,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\artifacts\</OutputPath>
+    <OutputPath>c:/users/jp/repositories/github/dwp/store/artifacts</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -45,7 +45,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>c:/users/jp/repositories/github/dwp/store/artifacts</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="infrastructure\container\IFetchDependencies.cs" />
-    <Compile Include="infrastructure\container\stubs\StubContainer.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\IMapADiscretePair.cs" />
     <Compile Include="infrastructure\IMapFromOneTypeToAnother.cs" />
@@ -91,7 +90,6 @@
     <Compile Include="infrastructure\PropertyAccessor.cs" />
     <Compile Include="infrastructure\IProcessElementsOf.cs" />
     <Compile Include="infrastructure\stubs\Stub.cs" />
-    <Compile Include="infrastructure\stubs\StubPayload.cs" />
     <Compile Include="infrastructure\TokenStore.cs" />
     <Compile Include="web\application\catalogbrowsing\IProvideAUrlToRunACommand.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
@@ -105,12 +103,10 @@
     <Compile Include="web\core\aspnet\IFindAspxPagesForReportModels.cs" />
     <Compile Include="web\core\aspnet\IReportModelBoundAspx .cs" />
     <Compile Include="web\core\aspnet\PageFactory.cs" />
-    <Compile Include="web\core\aspnet\PathRegistry.cs" />
     <Compile Include="web\core\aspnet\SimpleView.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\core\aspnet\WebFormFactory.cs" />
-    <Compile Include="web\core\CommandNotRegisteredException.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\CommandUrl.cs" />
     <Compile Include="web\core\CurrentContextResolver.cs" />
@@ -122,13 +118,13 @@
     <Compile Include="web\core\IProcessAnApplicationSpecificBehaviour .cs" />
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
-    <Compile Include="web\core\MissingApplicationBehaviour.cs" />
     <Compile Include="web\core\urls\IMapAnPropertyExpressionToAMeaningfulUrlTokenKey.cs" />
     <Compile Include="web\core\urls\ItemDetailSpecifier.cs" />
     <Compile Include="web\core\MissingCommandFactory.cs" />
     <Compile Include="web\core\PayloadFactory.cs" />
     <Compile Include="web\core\RawHandler.cs" />
     <Compile Include="web\core\Request.cs" />
+    <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\urls\IAddExtraInformationForABehaviourTarget.cs" />
     <Compile Include="web\core\urls\IBuildUrls.cs" />
     <Compile Include="web\core\urls\ICreateItemDetailSpecifiers.cs" />
@@ -142,6 +138,7 @@
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\stubs\StubMissingRequest.cs" />
+    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
   </ItemGroup>
   <ItemGroup />

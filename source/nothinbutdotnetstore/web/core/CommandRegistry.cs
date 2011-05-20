@@ -11,7 +11,7 @@ namespace nothinbutdotnetstore.web.core
     MissingCommandFactory missing_command_factory;
 
     public CommandRegistry() : this(Stub.with<StubSetOfCommands>(),
-                                    Stub.with<StubMissingRequest>().create)
+                                    () => new MissingApplicationBehaviour())
     {
     }
 

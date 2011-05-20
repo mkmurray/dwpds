@@ -1,8 +1,5 @@
 using System.Web;
 using System.Web.Compilation;
-using nothinbutdotnetstore.infrastructure;
-using nothinbutdotnetstore.infrastructure.stubs;
-using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.web.core.aspnet
 {
@@ -12,8 +9,8 @@ namespace nothinbutdotnetstore.web.core.aspnet
 
     IFindAspxPagesForReportModels page_registry;
 
-    public WebFormFactory():this(BuildManager.CreateInstanceFromVirtualPath,
-      Stub.with<StubPathRegistry>())
+    public WebFormFactory() : this(BuildManager.CreateInstanceFromVirtualPath,
+                                   new PathRegistry())
     {
     }
 

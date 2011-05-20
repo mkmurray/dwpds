@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 using nothinbutdotnetstore.infrastructure;
-using developwithpassion.specifications.extensions;
 
 namespace nothinbutdotnetstore.specs
 {
@@ -33,6 +31,7 @@ namespace nothinbutdotnetstore.specs
       static string key;
       static object value;
     }
+
     public class when_attempting_to_add_the_same_key_twice : concern
     {
       Establish c = () =>
@@ -41,16 +40,14 @@ namespace nothinbutdotnetstore.specs
         value = "the value";
         new_value = "second value";
 
-        sut_setup.run(x => x.store_token(key,value));
+        sut_setup.run(x => x.store_token(key, value));
       };
 
       Because b = () =>
         sut.store_token(key, new_value);
 
       It should_overwrite_the_previous_value = () =>
-      {
         concrete_sut[key].ShouldEqual(new_value);
-      };
 
       static string key;
       static object value;

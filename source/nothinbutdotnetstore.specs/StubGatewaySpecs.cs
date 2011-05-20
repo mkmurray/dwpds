@@ -1,6 +1,5 @@
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
-using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.infrastructure.stubs;
 
 namespace nothinbutdotnetstore.specs
@@ -14,12 +13,17 @@ namespace nothinbutdotnetstore.specs
     [Subject(typeof(Stub))]
     public class when_a_stub_is_requested : concern
     {
-      Establish c = () => { };
+      Establish c = () =>
+      {
+      };
 
       Because b = () =>
         stub = Stub.with<OurItemToStub>();
 
-      It should_return_new_display_engine_stub = () => { stub.ShouldNotBeNull(); };
+      It should_return_new_display_engine_stub = () =>
+      {
+        stub.ShouldNotBeNull();
+      };
 
       static object stub;
     }
