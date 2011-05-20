@@ -1,8 +1,7 @@
-using System;
-using nothinbutdotnetstore.web.core;
+﻿using System;
 using nothinbutdotnetstore.web.core.urls;
 
-namespace nothinbutdotnetstore.infrastructure
+namespace nothinbutdotnetstore.web.core
 {
   public static class CommandUrl
   {

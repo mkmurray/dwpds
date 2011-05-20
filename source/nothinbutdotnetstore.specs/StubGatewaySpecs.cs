@@ -1,6 +1,7 @@
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 using nothinbutdotnetstore.infrastructure;
+using nothinbutdotnetstore.infrastructure.stubs;
 
 namespace nothinbutdotnetstore.specs
 {

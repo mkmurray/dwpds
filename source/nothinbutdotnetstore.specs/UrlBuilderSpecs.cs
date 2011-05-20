@@ -16,7 +16,10 @@ namespace nothinbutdotnetstore.specs
     public abstract class concern : Observes<IBuildUrls,
                                       UrlBuilder>
     {
-      Establish c = () => { token_store = depends.on<IStoreTokens>(); };
+      Establish c = () =>
+      {
+        token_store = depends.on<IStoreTokens>();
+      };
 
       protected static IStoreTokens token_store;
     }
@@ -37,7 +40,10 @@ namespace nothinbutdotnetstore.specs
 
     public abstract class concern_for_url_adorner : Observes<IAddExtraInformationForABehaviourTarget, UrlBuilder>
     {
-      Establish c = () => { token_store = depends.on<IStoreTokens>(); };
+      Establish c = () =>
+      {
+        token_store = depends.on<IStoreTokens>();
+      };
 
       protected static IStoreTokens token_store;
     }

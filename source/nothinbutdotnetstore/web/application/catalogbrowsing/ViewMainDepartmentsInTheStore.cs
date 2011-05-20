@@ -1,5 +1,6 @@
 using System;
 using nothinbutdotnetstore.infrastructure;
+using nothinbutdotnetstore.infrastructure.stubs;
 using nothinbutdotnetstore.web.application.catalogbrowsing.stubs;
 using nothinbutdotnetstore.web.core;
 
