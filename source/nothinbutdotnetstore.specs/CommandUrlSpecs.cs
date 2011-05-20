@@ -30,8 +30,7 @@ namespace nothinbutdotnetstore.specs
 
         the_url_builder.setup(x => x.target<OurCommand>()).Return(url_adorner);
 
-        SharedBehaviours.scaffold_container_returned(factory, pipeline
-                                                     , fake);
+        SharedBehaviours.scaffold_container_returned(factory, pipeline , fake);
 
       };
 
