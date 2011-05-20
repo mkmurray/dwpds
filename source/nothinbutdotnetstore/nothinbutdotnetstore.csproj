@@ -79,11 +79,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\container\Container.cs" />
+    <Compile Include="infrastructure\container\ContainerGatewayResolver.cs" />
     <Compile Include="infrastructure\container\IFetchDependencies.cs" />
     <Compile Include="infrastructure\container\stubs\StubContainer.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\IMapADiscretePair.cs" />
     <Compile Include="infrastructure\IMapFromOneTypeToAnother.cs" />
+    <Compile Include="infrastructure\interception\IInterceptCallsToMethods.cs" />
     <Compile Include="infrastructure\IProcessAndGenerate.cs" />
     <Compile Include="infrastructure\IStoreTokens.cs" />
     <Compile Include="infrastructure\MappingGateway.cs" />

@@ -1,4 +1,5 @@
 using System.Web;
+using nothinbutdotnetstore.infrastructure.container;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -7,9 +8,10 @@ namespace nothinbutdotnetstore.web.core
     IProcessIncomingRequests front_controller;
     ICreateRequests request_factory;
 
-    public RawHandler() : this(new FrontController(),
-                               new RequestFactory())
+    public RawHandler() : this(Container.resolve.an<IProcessIncomingRequests>(),
+      Container.resolve.an<ICreateRequests>())
     {
+
     }
 
     public RawHandler(IProcessIncomingRequests front_controller, ICreateRequests request_factory)

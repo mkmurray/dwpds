@@ -2,6 +2,8 @@ using System;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 using nothinbutdotnetstore.infrastructure;
+using nothinbutdotnetstore.infrastructure.container;
+using nothinbutdotnetstore.specs.utility;
 using nothinbutdotnetstore.web.application.catalogbrowsing;
 using nothinbutdotnetstore.web.core;
 using nothinbutdotnetstore.web.core.urls;
@@ -25,9 +27,10 @@ namespace nothinbutdotnetstore.specs
         the_url_builder = fake.an<IBuildUrls>();
         url_adorner = fake.an<IAddExtraInformationForABehaviourTarget>();
 
-        spec.change(() => CommandUrl.builder_factory).to(factory);
 
         the_url_builder.setup(x => x.target<OurCommand>()).Return(url_adorner);
+
+        pipeline.add_setup_teardown_pair(SharedBehaviours.scaffold_container_returned(factory));
       };
 
       Because b = () =>
@@ -42,6 +45,7 @@ namespace nothinbutdotnetstore.specs
       static string expected_url;
       static IBuildUrls the_url_builder;
       static IAddExtraInformationForABehaviourTarget url_adorner;
+      static IFetchDependencies container;
     }
 
     public class OurCommand : IProcessAnApplicationSpecificBehaviour

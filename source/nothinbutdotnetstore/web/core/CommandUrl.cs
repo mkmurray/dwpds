@@ -1,18 +1,15 @@
-﻿using System;
+﻿using nothinbutdotnetstore.infrastructure.container;
 using nothinbutdotnetstore.web.core.urls;
 
 namespace nothinbutdotnetstore.web.core
 {
   public static class CommandUrl
   {
-    public static UrlBuilderFactory builder_factory = () =>
+    public static IAddExtraInformationForABehaviourTarget to_run<Behaviour>()
+      where Behaviour : IProcessAnApplicationSpecificBehaviour
     {
-      throw new NotImplementedException("This needs to be configured by the startup pipeline");
-    };
-
-    public static IAddExtraInformationForABehaviourTarget to_run<Behaviour>() where Behaviour : IProcessAnApplicationSpecificBehaviour
-    {
-      return builder_factory().target<Behaviour>();
+      var url_builder_factory = Container.resolve.an<UrlBuilderFactory>();
+      return url_builder_factory().target<Behaviour>();
     }
   }
 }
