@@ -17,5 +17,5 @@ namespace nothinbutdotnetstore.specs
       It first_observation = () =>
         
     }
-  
+  }
 }
