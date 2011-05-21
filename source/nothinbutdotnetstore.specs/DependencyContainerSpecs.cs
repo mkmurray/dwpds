@@ -11,8 +11,7 @@ namespace nothinbutdotnetstore.specs
   {
     public abstract class concern : Observes<IFetchDependencies,
                                       DependencyContainer>
-    {
-    }
+    {}
 
     [Subject(typeof(DependencyContainer))]
     public class when_asked_to_resolve_a_dependency_and_it_has_the_factory_for_that_dependency : concern
@@ -25,7 +24,7 @@ namespace nothinbutdotnetstore.specs
         factories.Add(typeof(OurContract),factory);
 
         depends.on(factories);
-
+          
         factory.setup(x => x.create()).Return(the_created_item);
       };
 
@@ -52,7 +51,7 @@ namespace nothinbutdotnetstore.specs
         factories.Add(typeof(OurContract),factory);
 
         depends.on(factories);
-
+          
         factory.setup(x => x.create()).Return(the_created_item);
       };
 
