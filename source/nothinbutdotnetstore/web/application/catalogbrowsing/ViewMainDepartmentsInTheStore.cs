@@ -1,9 +1,8 @@
-using System;
 using nothinbutdotnetstore.web.core;
 
 namespace nothinbutdotnetstore.web.application.catalogbrowsing
 {
-  public class ViewMainDepartmentsInTheStore : IProcessAnApplicationSpecificBehaviour, IProvideAUrlToRunACommand
+  public class ViewMainDepartmentsInTheStore : IProcessAnApplicationSpecificBehaviour
   {
     ICanFindDetailsInTheStore store_catalog;
     ICanRenderInformation display_engine;
@@ -17,11 +16,6 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
     public void run(IContainRequestInformation request)
     {
       display_engine.display(store_catalog.get_the_main_departments());
-    }
-
-    public string get_url()
-    {
-      throw new NotImplementedException();
     }
   }
 }

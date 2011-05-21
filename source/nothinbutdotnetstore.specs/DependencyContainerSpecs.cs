@@ -117,7 +117,7 @@ namespace nothinbutdotnetstore.specs
     }
   }
 
-  public class OurContract
+  internal class OurContract
   {
   }
 }

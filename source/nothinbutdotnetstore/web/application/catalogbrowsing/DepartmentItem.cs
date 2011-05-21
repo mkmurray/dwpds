@@ -4,5 +4,6 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
   {
     public long id { get; set; }
     public string name { get; set; }
+    public bool has_products { get; set; }
   }
 }

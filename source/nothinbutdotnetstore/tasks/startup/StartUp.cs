@@ -11,6 +11,8 @@ using nothinbutdotnetstore.web.application.catalogbrowsing.stubs;
 using nothinbutdotnetstore.web.core;
 using nothinbutdotnetstore.web.core.aspnet;
 using nothinbutdotnetstore.web.core.routing;
+using nothinbutdotnetstore.web.core.stubs;
+using nothinbutdotnetstore.web.core.urls;
 
 namespace nothinbutdotnetstore.tasks.startup
 {
@@ -21,13 +23,18 @@ namespace nothinbutdotnetstore.tasks.startup
 
     public static void run()
     {
-      dependencies = new Dictionary<Type, IManageTheCreationOfOneSpecificType>();
+      //intro to startup models
+//      Start.by<ConfigureCoreServices>()
+//        .then_by<AutoWireComponentsIntoContainer>()
+//        .finish_by<RegisterRoutes>();
+
+//      Start.by_running_all_steps_in("startup_steps.txt");
+
       configure_core_services();
       configure_front_controller();
       configure_service_layer();
-
-      configure_application_components();
       configure_application_behaviours();
+      configure_application_components();
       configure_routes();
     }
 
@@ -63,11 +70,19 @@ namespace nothinbutdotnetstore.tasks.startup
       path_registry.Add(typeof(IEnumerable<DepartmentItem>), "~/views/DepartmentBrowser.aspx");
       path_registry.Add(typeof(IEnumerable<ProductItem>), "~/views/ProductBrowser.aspx");
 
+      register_container_item<ICreateItemDetailSpecifiers>(Stub.with<StubItemSpecifierFactory>());
+      register_container_item<ITransformStoreTokensToANiceUrl, UrlTransformingVisitor>();
+      register_container_item<IStoreTokens>(new SimpleDependencyFactory(() => new TokenStore()));
       register_container_item<IFindAspxPagesForReportModels>(path_registry);
       register_container_item<MissingCommandFactory>(() =>
       {
         throw new NotImplementedException("There is no command for you!!!");
       });
+
+      register_container_item<UrlBuilderFactory>(() =>
+        new UrlBuilder(container.an<IStoreTokens>(),
+          container.an<ICreateItemDetailSpecifiers>(),
+          container.an<ITransformStoreTokensToANiceUrl>()));
     }
 
     static void configure_application_behaviours()
@@ -87,6 +102,7 @@ namespace nothinbutdotnetstore.tasks.startup
 
     static void configure_core_services()
     {
+      dependencies = new Dictionary<Type, IManageTheCreationOfOneSpecificType>();
       container = new DependencyContainer(dependencies);
       ContainerGatewayResolver resolver = () => container;
       Container.gateway_resolver = resolver;
@@ -95,6 +111,11 @@ namespace nothinbutdotnetstore.tasks.startup
       register_container_item<IMapFromOneTypeToAnother,MappingGateway>();
     }
 
+    static void register_container_item<Contract>(IManageTheCreationOfOneSpecificType factory)
+    {
+      dependencies.Add(typeof(Contract),
+                       factory);
+    }
     static void register_container_item<Contract>(Contract instance)
     {
       dependencies.Add(typeof(Contract),
