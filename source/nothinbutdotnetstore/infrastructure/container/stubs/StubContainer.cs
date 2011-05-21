@@ -1,3 +1,4 @@
+using System;
 using nothinbutdotnetstore.web.application.catalogbrowsing;
 
 namespace nothinbutdotnetstore.infrastructure.container.stubs
@@ -8,6 +9,11 @@ namespace nothinbutdotnetstore.infrastructure.container.stubs
     {
       object item = new StubDepartmentMapper();
       return (Dependency) item;
+    }
+
+    public object an(Type dependency)
+    {
+      throw new NotImplementedException();
     }
   }
 

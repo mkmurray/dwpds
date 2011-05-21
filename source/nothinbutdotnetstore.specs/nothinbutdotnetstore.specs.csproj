@@ -111,7 +111,7 @@
     <Compile Include="CommandUrlSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
-    <Compile Include="FetchDependenciesSpecs.cs" />
+    <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="RequestSpecificationFactorySpecs.cs" />
     <Compile Include="utility\SharedBehaviours.cs" />
     <Compile Include="WebSpecs.cs" />
