@@ -1,4 +1,3 @@
-using System.Web;
 using nothinbutdotnetstore.web.core.aspnet;
 
 namespace nothinbutdotnetstore.web.core
@@ -7,11 +6,6 @@ namespace nothinbutdotnetstore.web.core
   {
     ICreateAnAspxTemplateForAReportModel view_factory;
     CurrentContextResolver current_context_resolver;
-
-    public WebFormDisplayEngine():this(new WebFormFactory(),
-      () => HttpContext.Current)
-    {
-    }
 
     public WebFormDisplayEngine(ICreateAnAspxTemplateForAReportModel view_factory,
                                 CurrentContextResolver current_context_resolver)

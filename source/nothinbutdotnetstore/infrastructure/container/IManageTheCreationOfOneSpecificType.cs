@@ -1,5 +1,3 @@
-using System;
-
 namespace nothinbutdotnetstore.infrastructure.container
 {
   public interface IManageTheCreationOfOneSpecificType
@@ -7,22 +5,18 @@ namespace nothinbutdotnetstore.infrastructure.container
     object create();
   }
 
-    public  class ManageTheCreationOfOneSpecificType :IManageTheCreationOfOneSpecificType
+  public class SimpleDependencyFactory : IManageTheCreationOfOneSpecificType
+  {
+    ItemFactory item_factory;
+
+    public SimpleDependencyFactory(ItemFactory item_factory)
     {
-        private readonly Type type;
-
-        public ManageTheCreationOfOneSpecificType( Type type)
-        {
-            this.type = type;
-        }
-
-        public object create()
-        {
-            return Activator.CreateInstance(type);
-        }
+      this.item_factory = item_factory;
     }
 
-    public class OneSpecificType
-    {}
-
+    public object create()
+    {
+      return item_factory();
+    }
+  }
 }

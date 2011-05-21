@@ -1,11 +1,21 @@
 using System;
 using System.IO;
+using System.Linq.Expressions;
+using System.Reflection;
 using System.Web;
+using developwithpassion.specifications.extensions;
 
 namespace nothinbutdotnetstore.specs.utility
 {
   public class ObjectFactory
   {
+    public class expressions
+    {
+      public static ConstructorInfo get_the_constructor_pointed_at_by<Item>(Expression<Func<Item>> ctor)
+      {
+        return ctor.Body.downcast_to<NewExpression>().Constructor;
+      }
+    }
     public class web
     {
       public static HttpContext create_http_context()

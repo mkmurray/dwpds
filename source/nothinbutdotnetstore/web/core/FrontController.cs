@@ -4,9 +4,6 @@ namespace nothinbutdotnetstore.web.core
   {
     IFindCommands command_registry;
 
-    public FrontController():this(new CommandRegistry())
-    {
-    }
 
     public FrontController(IFindCommands command_registry)
     {

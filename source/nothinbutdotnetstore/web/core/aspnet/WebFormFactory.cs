@@ -1,5 +1,4 @@
 using System.Web;
-using System.Web.Compilation;
 
 namespace nothinbutdotnetstore.web.core.aspnet
 {
@@ -8,11 +7,6 @@ namespace nothinbutdotnetstore.web.core.aspnet
     PageFactory page_factory;
 
     IFindAspxPagesForReportModels page_registry;
-
-    public WebFormFactory() : this(BuildManager.CreateInstanceFromVirtualPath,
-                                   new PathRegistry())
-    {
-    }
 
     public WebFormFactory(PageFactory page_factory, IFindAspxPagesForReportModels page_registry)
     {

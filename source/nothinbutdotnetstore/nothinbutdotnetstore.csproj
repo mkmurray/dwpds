@@ -79,14 +79,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\container\AutomaticDependencyFactory.cs" />
+    <Compile Include="infrastructure\container\ConstructorSelectionStrategy.cs" />
     <Compile Include="infrastructure\container\Container.cs" />
     <Compile Include="infrastructure\container\ContainerGatewayResolver.cs" />
     <Compile Include="infrastructure\container\DependencyContainer.cs" />
     <Compile Include="infrastructure\container\DependencyCreationException.cs" />
     <Compile Include="infrastructure\container\DependencyFactoryNotRegisteredException.cs" />
+    <Compile Include="infrastructure\container\GreedyConstructorSelectorStrategy.cs" />
     <Compile Include="infrastructure\container\IFetchDependencies.cs" />
     <Compile Include="infrastructure\container\ILookupTypesByContract.cs" />
     <Compile Include="infrastructure\container\IManageTheCreationOfOneSpecificType.cs" />
+    <Compile Include="infrastructure\container\ItemFactory.cs" />
     <Compile Include="infrastructure\container\stubs\StubContainer.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\IMapADiscretePair.cs" />
@@ -101,6 +105,7 @@
     <Compile Include="infrastructure\stubs\Stub.cs" />
     <Compile Include="infrastructure\stubs\StubPayload.cs" />
     <Compile Include="infrastructure\TokenStore.cs" />
+    <Compile Include="tasks\startup\StartUp.cs" />
     <Compile Include="web\application\catalogbrowsing\IProvideAUrlToRunACommand.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
     <Compile Include="web\application\catalogbrowsing\DepartmentItem.cs" />
@@ -130,7 +135,10 @@
     <Compile Include="web\core\IProcessAnApplicationSpecificBehaviour .cs" />
     <Compile Include="web\core\IProcessIncomingRequests.cs" />
     <Compile Include="web\core\IProcessRequestInformation .cs" />
+    <Compile Include="web\core\IStoreRoutes .cs" />
     <Compile Include="web\core\MissingApplicationBehaviour.cs" />
+    <Compile Include="web\core\Routes.cs" />
+    <Compile Include="web\core\RouteTable.cs" />
     <Compile Include="web\core\routing\ICreateRequestSpecifications .cs" />
     <Compile Include="web\core\routing\RequestCriteriaBuilderFactory.cs" />
     <Compile Include="web\core\routing\RequestSpecificationFactory.cs" />

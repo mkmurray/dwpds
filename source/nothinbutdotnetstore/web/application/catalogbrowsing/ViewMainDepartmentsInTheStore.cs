@@ -1,7 +1,4 @@
 using System;
-using nothinbutdotnetstore.infrastructure;
-using nothinbutdotnetstore.infrastructure.stubs;
-using nothinbutdotnetstore.web.application.catalogbrowsing.stubs;
 using nothinbutdotnetstore.web.core;
 
 namespace nothinbutdotnetstore.web.application.catalogbrowsing
@@ -10,11 +7,6 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
   {
     ICanFindDetailsInTheStore store_catalog;
     ICanRenderInformation display_engine;
-
-    public ViewMainDepartmentsInTheStore() : this(Stub.with<StubStoreCatalog>(),
-                                                  new WebFormDisplayEngine())
-    {
-    }
 
     public ViewMainDepartmentsInTheStore(ICanFindDetailsInTheStore store_catalog, ICanRenderInformation display_engine)
     {

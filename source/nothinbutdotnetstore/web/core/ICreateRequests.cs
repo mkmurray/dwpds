@@ -14,10 +14,6 @@ namespace nothinbutdotnetstore.web.core
     IMapFromOneTypeToAnother mapping_gateway;
     PayloadFactory payload_factory;
 
-    public RequestFactory():this(new MappingGateway(),
-      x => Stub.with<StubPayload>())
-    {
-    }
 
     public RequestFactory(IMapFromOneTypeToAnother mapping_gateway, PayloadFactory payload_factory)
     {

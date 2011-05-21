@@ -108,12 +108,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomaticDependencyFactorySpecs.cs" />
     <Compile Include="CommandUrlSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
-    <Compile Include="ManageTheCreationOfOneSpecificTypeSpecs.cs" />
+    <Compile Include="GreedyConstructorSelectorStrategySpecs.cs" />
+    <Compile Include="RouteSpecs.cs" />
+    <Compile Include="RouteTableSpecs.cs" />
+    <Compile Include="SimpleDependencyFactorySpecs.cs" />
     <Compile Include="RequestSpecificationFactorySpecs.cs" />
+    <Compile Include="tasks\StartupSpecs.cs" />
     <Compile Include="utility\SharedBehaviours.cs" />
     <Compile Include="WebSpecs.cs" />
     <Compile Include="ItemDetailSpecifierSpecs.cs" />

@@ -2,8 +2,8 @@ namespace nothinbutdotnetstore.web.core
 {
   public class RequestCommand : IProcessRequestInformation
   {
-    RequestCriteria request_criteria;
-    IProcessAnApplicationSpecificBehaviour application_behaviour;
+    public RequestCriteria request_criteria;
+    public IProcessAnApplicationSpecificBehaviour application_behaviour;
 
     public RequestCommand(RequestCriteria request_criteria, IProcessAnApplicationSpecificBehaviour application_behaviour)
     {
