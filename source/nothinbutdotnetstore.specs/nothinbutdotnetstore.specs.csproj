@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="CommandUrlSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="DependencyFactoryNotRegisteredExceptionSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="ObjectFactorySpecs.cs" />
