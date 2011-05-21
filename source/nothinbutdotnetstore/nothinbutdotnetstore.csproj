@@ -87,6 +87,7 @@
     <Compile Include="infrastructure\container\IFetchDependencies.cs" />
     <Compile Include="infrastructure\container\ILookupTypesByContract.cs" />
     <Compile Include="infrastructure\container\IManageTheCreationOfOneSpecificType.cs" />
+    <Compile Include="infrastructure\container\ObjectFactory.cs" />
     <Compile Include="infrastructure\container\stubs\StubContainer.cs" />
     <Compile Include="infrastructure\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\IMapADiscretePair.cs" />

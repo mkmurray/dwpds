@@ -112,6 +112,7 @@
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
+    <Compile Include="ObjectFactorySpecs.cs" />
     <Compile Include="RequestSpecificationFactorySpecs.cs" />
     <Compile Include="utility\SharedBehaviours.cs" />
     <Compile Include="WebSpecs.cs" />
